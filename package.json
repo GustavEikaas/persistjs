@@ -16,5 +16,8 @@
   "devDependencies": {
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "lerna": "^6.4.1"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
