@@ -6,6 +6,7 @@
   "scripts": {
     "build": "pnpm -r build",
     "build:prod": "pnpm -r build:prod",
+    "test": "pnpm -r test",
     "documentation": "pnpx astro dev --root ./documentation",
     "shipit": "pnpm build:prod && lerna version && pnpm publish -r"
   },
