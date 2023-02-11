@@ -1,6 +1,6 @@
 {
     "name": "persistjs-react",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "type": "module",
     "scripts": {
         "build": "tsc -b",
@@ -23,6 +23,6 @@
         "react": ">= 16.8.0"
     },
     "dependencies": {
-        "persistjs-core": "workspace:0.0.0"
+        "persistjs-core": "workspace:0.0.1"
     }
 }
