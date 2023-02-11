@@ -1,9 +1,9 @@
-import { Observer, Store as IStore, ObserverOptions } from "../types";
-
-type Subscriber = {
-  key: string;
-  observer: Observer<any>;
-};
+import {
+  ObserverHandler,
+  Store as IStore,
+  ObserverOptions,
+  Observer,
+} from "../types";
 
 export class Store implements IStore {
   /**
@@ -38,7 +38,7 @@ export class Store implements IStore {
    */
   observe = <T>(
     key: string,
-    observer: Observer<T>,
+    observer: ObserverHandler<T>,
     observerOptions?: ObserverOptions
   ) => {
     this.#observers.push({ observer: observer, key });
@@ -56,7 +56,7 @@ export class Store implements IStore {
   #entries = new Map<string, unknown>();
 
   /** Observers */
-  #observers: Subscriber[] = [];
+  #observers: Observer[] = [];
 
   /** Notify observers of changes in entries */
   #notify = (key: string) => {
@@ -69,7 +69,7 @@ export class Store implements IStore {
    * Removes an observer using the function identity
    * @param identity - Observer callback function
    */
-  #removeObserver = (identity: Observer<any>) => {
+  #removeObserver = (identity: ObserverHandler<any>) => {
     this.#observers.splice(
       this.#observers.findIndex((s) => s.observer === identity),
       1
