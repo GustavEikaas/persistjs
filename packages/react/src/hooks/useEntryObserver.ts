@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { usePersistorContext } from "./usePersistorContext";
 
 /**
- * Observe an entry an use it as a state
+ * Run a handler function when an entry changes
  * @param key - entry to observe
- * @returns - Entry as React state
  */
-export function useEntryObserver<T>(key: string) {
+export function useEntryObserver<T>(
+  key: string,
+  handler: (val: T | undefined) => void
+) {
   const context = usePersistorContext();
-  const [val, setVal] = useState<T | undefined>(context.store.get(key));
 
   useEffect(() => {
-    const sub = context.store.observe<T>(key, (data) => setVal(data));
-    return () => sub();
-  }, [context.store, key]);
-
-  return val;
+    const unsubscribe = context.store.observe<T>(key, handler);
+    return () => unsubscribe();
+  }, [context, key, handler]);
 }
