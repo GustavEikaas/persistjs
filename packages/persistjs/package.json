@@ -1,5 +1,5 @@
 {
-    "name": "persistjs-react",
+    "name": "persistjs-core",
     "version": "0.0.0-preview",
     "scripts": {
         "build": "tsc -b",
@@ -12,16 +12,8 @@
     "types": "./dist/esm/index.d.ts",
     "license": "MIT",
     "devDependencies": {
-        "@types/react": "^18.0.28",
         "@vitest/coverage-c8": "^0.28.4",
-        "react": "^18.2.0",
         "vite": "^4.1.1",
         "vitest": "^0.28.4"
-    },
-    "peerDependencies": {
-        "react": ">= 16.8.0"
-    },
-    "dependencies": {
-        "persistjs-core": "workspace:0.0.0-preview"
     }
 }
