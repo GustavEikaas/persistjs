@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { usePersistor } from "persistjs-react";
+import { useEntryObserver, usePersistor } from "persistjs-react";
 import { Observer } from "./Observer";
 
 function App() {
   const [showCounter, setShowCounter] = useState(true);
+
+  useEntryObserver("count", (val) =>
+    console.log(`
+  ######
+  count is now: ${val}
+  ######
+  `)
+  );
+
   return (
     <div className="App">
       <div>
