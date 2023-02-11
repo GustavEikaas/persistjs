@@ -55,7 +55,7 @@ importers:
     specifiers:
       '@types/react': ^18.0.28
       '@vitest/coverage-c8': ^0.28.4
-      persistjs-core: workspace:0.0.0-preview
+      persistjs-core: workspace:0.0.0
       react: ^18.2.0
       vite: ^4.1.1
       vitest: ^0.28.4
