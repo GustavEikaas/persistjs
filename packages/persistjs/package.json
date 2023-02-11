@@ -1,15 +1,16 @@
 {
     "name": "persistjs-core",
     "version": "0.0.0-preview",
+    "type": "module",
     "scripts": {
         "build": "tsc -b",
         "build:prod": "vite build && tsc -b",
         "test": "vitest --run",
         "test:coverage": "vitest run --coverage"
     },
-    "main": "./dist/index.umd.js",
-    "module": "./dist/esm/index.js",
-    "types": "./dist/esm/index.d.ts",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
     "license": "MIT",
     "devDependencies": {
         "@vitest/coverage-c8": "^0.28.4",

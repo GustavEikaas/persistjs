@@ -1,4 +1,4 @@
-import { useEntryObserver } from "persistjs-react/dist/esm/hooks";
+import { useEntryObserver } from "persistjs-react";
 
 export function Observer<T>({ entry }: { entry: string }) {
   const data = useEntryObserver<T>(entry);
