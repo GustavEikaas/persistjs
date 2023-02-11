@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm -r build",
+    "build:prod": "pnpm -r build:prod",
+    "documentation": "pnpx astro dev --root ./documentation",
+    "shipit": "pnpm build:prod && lerna version && pnpm publish -r"
   },
   "keywords": [],
   "author": "Gustav Eikaas",
