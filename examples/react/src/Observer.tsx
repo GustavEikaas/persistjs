@@ -1,7 +1,7 @@
 import { useEntry, useEntryObserver } from "persistjs-react";
 
 export function Observer<T>({ entry }: { entry: string }) {
-  const data = useEntry(entry);
+  const data = useEntry<T>(entry);
 
   return (
     <div>
